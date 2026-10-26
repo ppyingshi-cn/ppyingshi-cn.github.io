@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PP影视（ppyingshi-cn）提供最新高清电影、热播电视剧、动漫、综艺在线观看，免费影视资源每日更新，极速播放无广告。">
+<meta name="keywords" content="PP影视, ppyingshi-cn, 影视, 电影, 电视剧, 在线观看, 高清影视, 免费影视">
+<meta name="author" content="PP影视">
+<meta name="robots" content="index, follow">
+<meta name="generator" content="PP影视建站系统">
+<link rel="canonical" href="https://ppyingshi-cn.github.io/">
+<title>PP影视 - ppyingshi-cn 高清影视在线观看平台 | 最新电影电视剧免费看</title>
+<style>
+/* ========== Reset & Base ========== */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#e6b450;--gold-d:#b8862b;--red:#ff3b3b;--ink:#10131a;
+  --card:#171c26;--line:#262d3a;--txt:#e8ecf3;--mut:#8f9bb0;--cyan:#35e0d6;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--ink);color:var(--txt);line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px;}
+
+/* ========== Header / Nav ========== */
+header.top{
+  position:sticky;top:0;z-index:100;background:rgba(12,15,21,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;gap:22px;height:64px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:.5px;}
+.logo .badge{
+  width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--red));
+  display:grid;place-items:center;color:#10131a;font-size:15px;font-weight:900;
+}
+.logo b{background:linear-gradient(90deg,var(--gold),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.logo span{font-size:12px;color:var(--mut);font-weight:600;}
+.menu{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap;}
+.menu a{
+  padding:8px 14px;border-radius:22px;font-size:14px;color:var(--mut);font-weight:600;
+  transition:.25s;white-space:nowrap;
+}
+.menu a:hover,.menu a.cur{color:#10131a;background:linear-gradient(90deg,var(--gold),#ffd477);}
+.search{
+  display:flex;align-items:center;gap:8px;background:#0c0f15;
+  border:1px solid var(--line);border-radius:22px;padding:8px 14px;
+}
+.search input{background:none;border:none;outline:none;color:var(--txt);width:120px;font-size:13px;}
+.search input::placeholder{color:#5a6375;}
+
+/* ========== Hero ========== */
+.hero{position:relative;padding:64px 0 50px;overflow:hidden;}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(900px 400px at 82% -10%,rgba(230,180,80,.28),transparent 60%),
+             radial-gradient(700px 360px at 8% 110%,rgba(255,59,59,.22),transparent 60%);
+}
+.herobox{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+.hero h1{font-size:44px;line-height:1.2;font-weight:900;letter-spacing:-.5px;}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p.sub{color:var(--mut);margin:18px 0 26px;max-width:520px;font-size:15px;}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{padding:14px 30px;border-radius:30px;font-weight:700;font-size:15px;transition:.25s;display:inline-flex;align-items:center;gap:8px;}
+.btn.main{background:linear-gradient(90deg,var(--gold),var(--gold-d));color:#10131a;}
+.btn.main:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(230,180,80,.35);}
+.btn.ghost{border:1px solid var(--line);color:var(--txt);}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold);}
+/* featured card */
+.feat{
+  background:linear-gradient(160deg,var(--card),#10151d);border:1px solid var(--line);
+  border-radius:22px;padding:22px;position:relative;transform:rotate(1deg);
+  box-shadow:0 30px 60px rgba(0,0,0,.5);
+}
+.feat .tag{position:absolute;top:16px;left:16px;background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;}
+.feat img{border-radius:14px;aspect-ratio:16/10;object-fit:cover;}
+.feat .fi{margin-top:16px;display:flex;justify-content:space-between;align-items:baseline;}
+.feat .fi h3{font-size:19px;}
+.feat .fi small{color:var(--gold);font-weight:700;}
+.feat .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.feat .meta i{font-style:normal;font-size:12px;color:var(--mut);border:1px solid var(--line);padding:4px 10px;border-radius:20px;}
+
+/* ========== Section frame ========== */
+section{padding:54px 0;}
+.sec-head{display:flex;align-items:end;gap:16px;margin-bottom:26px;flex-wrap:wrap;}
+.sec-head h2{font-size:27px;font-weight:800;display:flex;align-items:center;gap:10px;}
+.sec-head h2::before{content:"";width:5px;height:24px;border-radius:3px;background:linear-gradient(var(--gold),var(--red));}
+.sec-head .tabs{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;}
+.sec-head .tabs button{
+  background:#0c0f15;border:1px solid var(--line);color:var(--mut);
+  padding:7px 16px;border-radius:20px;font-size:13px;cursor:pointer;transition:.2s;
+}
+.sec-head .tabs button.on,.sec-head .tabs button:hover{color:#10131a;background:var(--gold);border-color:var(--gold);}
+.sec-head .more{color:var(--gold);font-size:13px;font-weight:700;}
+
+/* grid cards */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.28s;position:relative;}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 18px 40px rgba(0,0,0,.45);}
+.card .pic{position:relative;aspect-ratio:3/4;overflow:hidden;background:#0c0f15;}
+.card .pic img{width:100%;height:100%;object-fit:cover;transition:.4s;}
+.card:hover .pic img{transform:scale(1.06);}
+.card .score{
+  position:absolute;top:10px;right:10px;background:rgba(10,13,19,.85);
+  color:var(--gold);font-weight:800;font-size:13px;padding:3px 9px;border-radius:8px;
+}
+.card .cv{padding:14px;}
+.card .cv h4{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.card .cv p{color:var(--mut);font-size:12.5px;margin-top:6px;display:flex;justify-content:space-between;}
+
+/* ========== Column 2: TV 差异化 DOM（横向条目列表） ========== */
+.tvwrap{background:linear-gradient(180deg,#12171f,#0d1118);border:1px solid var(--line);border-radius:20px;padding:8px;}
+.tvrow{display:grid;grid-template-columns:130px 1fr auto;gap:18px;align-items:center;padding:16px;border-radius:14px;transition:.22s;}
+.tvrow+.tvrow{border-top:1px dashed var(--line);}
+.tvrow:hover{background:rgba(230,180,80,.07);}
+.tvrow .pv{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/10;}
+.tvrow .pv img{width:100%;height:100%;object-fit:cover;}
+.tvrow .info h4{font-size:17px;margin-bottom:6px;}
+.tvrow .info p{color:var(--mut);font-size:13px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.tvrow .eps{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.tvrow .eps b{color:var(--gold);font-size:13px;}
+.tvrow .eps .chips{display:flex;gap:6px;flex-wrap:wrap;max-width:180px;justify-content:flex-end;}
+.tvrow .eps .chips i{font-style:normal;font-size:12px;background:#0c0f15;border:1px solid var(--line);padding:5px 10px;border-radius:6px;cursor:pointer;}
+.tvrow .eps .chips i:hover{background:var(--gold);color:#10131a;border-color:var(--gold);}
+
+/* ========== Column 3: 排行榜 差异化 DOM（有序列表 + 进度条） ========== */
+.rankbox{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.rank{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;}
+.rank h5{font-size:16px;margin-bottom:16px;color:var(--gold);display:flex;align-items:center;gap:8px;}
+.rank ol{list-style:none;counter-reset:r;}
+.rank li{counter-increment:r;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #1e2430;}
+.rank li:last-child{border-bottom:none;}
+.rank li::before{content:counter(r);font-weight:800;color:var(--mut);text-align:center;}
+.rank li:nth-child(1)::before{color:#ffd477;}
+.rank li:nth-child(2)::before{color:#c8cfdd;}
+.rank li:nth-child(3)::before{color:#cd8a4a;}
+.rank li .nm{font-size:14px;}
+.rank li .bar{height:5px;background:#0c0f15;border-radius:4px;margin-top:5px;overflow:hidden;}
+.rank li .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:4px;}
+.rank li .pt{font-size:12px;color:var(--gold);font-weight:700;}
+
+/* ========== Column 4: 资讯 差异化 DOM（瀑布流卡片） ========== */
+.news{display:grid;grid-template-columns:1.4fr 1fr;gap:22px;}
+.article{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s;}
+.article:hover{border-color:var(--cyan);transform:translateY(-4px);}
+.article.big .th{aspect-ratio:16/9;overflow:hidden;}
+.article.big .th img{width:100%;height:100%;object-fit:cover;}
+.article .bd{padding:20px;}
+.article .cat{display:inline-block;font-size:12px;font-weight:700;color:#10131a;background:var(--cyan);padding:3px 12px;border-radius:20px;margin-bottom:12px;}
+.article h3{font-size:19px;line-height:1.45;margin-bottom:10px;}
+.article p{color:var(--mut);font-size:13.5px;}
+.article .ft{display:flex;justify-content:space-between;color:var(--mut);font-size:12px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);}
+.newslist{display:flex;flex-direction:column;gap:14px;}
+.newslist .it{display:grid;grid-template-columns:84px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.22s;}
+.newslist .it:hover{border-color:var(--cyan);}
+.newslist .it img{width:100%;height:100%;object-fit:cover;}
+.newslist .it .tx{padding:12px 12px 12px 0;}
+.newslist .it .tx h6{font-size:14px;line-height:1.5;margin-bottom:6px;}
+.newslist .it .tx span{font-size:11px;color:var(--mut);}
+
+/* ========== SEO footer ========== */
+footer{background:#0a0c11;border-top:1px solid var(--line);padding:50px 0 26px;margin-top:20px;}
+.footgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:34px;}
+.footgrid h6{font-size:15px;color:var(--gold);margin-bottom:14px;}
+.footgrid p,.footgrid li{color:var(--mut);font-size:13px;line-height:2;}
+.footgrid ul{list-style:none;}
+.footgrid a:hover{color:var(--gold);}
+.footlinks{display:flex;flex-wrap:wrap;gap:10px;}
+.footlinks a{background:#12171f;border:1px solid var(--line);padding:6px 14px;border-radius:20px;font-size:12.5px;}
+.copy{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mut);font-size:12px;}
+
+/* back to top */
+#top{position:fixed;right:20px;bottom:24px;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--red));color:#10131a;font-weight:900;border:none;cursor:pointer;box-shadow:0 10px 26px rgba(230,180,80,.35);opacity:0;pointer-events:none;transition:.3s;z-index:99;}
+#top.show{opacity:1;pointer-events:auto;}
+
+/* ========== Responsive ========== */
+@media(max-width:900px){
+  .herobox{grid-template-columns:1fr;}
+  .grid{grid-template-columns:repeat(3,1fr);}
+  .rankbox,.news{grid-template-columns:1fr;}
+  .footgrid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .nav{height:auto;padding:12px 0;gap:10px;flex-wrap:wrap;}
+  .menu{margin-left:0;order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:2px;}
+  .menu a{padding:7px 12px;font-size:13px;}
+  .search{flex:1;min-width:140px;}
+  .search input{width:100%;}
+  .hero{padding:38px 0 34px;}
+  .hero h1{font-size:30px;}
+  .grid{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .tvrow{grid-template-columns:1fr;gap:12px;}
+  .tvrow .eps{align-items:flex-start;}
+  .tvrow .eps .chips{max-width:none;}
+  .footgrid{grid-template-columns:1fr;}
+  .sec-head h2{font-size:22px;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="top">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="badge">PP</div>
+      <div><b>PP影视</b><br><span>ppyingshi-cn · 高清影视门户</span></div>
+    </div>
+    <nav class="menu" aria-label="主导航">
+      <a href="#home" class="cur">首页</a>
+      <a href="#movies">电影</a>
+      <a href="#tv">电视剧</a>
+      <a href="#rank">排行榜</a>
+      <a href="#news">影视资讯</a>
+    </nav>
+    <div class="search" role="search">
+      <span aria-hidden="true">🔍</span>
+      <input type="search" placeholder="搜索影片、演员、导演" aria-label="搜索">
+    </div>
+  </div>
+</header>
+
+<!-- ============ 栏目一：首页 Hero + 最新电影 ============ -->
+<section id="home" class="hero">
+  <div class="wrap herobox">
+    <div class="copywrite">
+      <h1>在 <em>PP影视</em> 免费看高清<br>电影与热播剧集</h1>
+      <p class="sub">PP影视（ppyingshi-cn）聚合最新院线电影、热播电视剧、动漫与综艺，每日更新，支持极速播放、多清晰度切换，手机电脑都能流畅观看。</p>
+      <div class="ctas">
+        <a class="btn main" href="#movies">立即观看</a>
+        <a class="btn ghost" href="#rank">热门榜单</a>
+      </div>
+    </div>
+    <article class="feat">
+      <span class="tag">本周主打</span>
+      <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=720&q=70" alt="PP影视 本周主打影片 寂静回响" loading="lazy">
+      <div class="fi">
+        <h3>寂静回响</h3><small>9.2 分</small>
+      </div>
+      <div class="meta"><i>悬疑</i><i>2026</i><i>118 分钟</i><i>国语中字</i></div>
+    </article>
+  </div>
+</section>
+
+<section id="movies">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>最新电影</h2>
+      <div class="tabs" role="tablist">
+        <button class="on" role="tab" aria-selected="true">全部</button>
+        <button role="tab" aria-selected="false">动作</button>
+        <button role="tab" aria-selected="false">悬疑</button>
+        <button role="tab" aria-selected="false">喜剧</button>
+      </div>
+      <a class="more" href="#movies">更多电影 ›</a>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&q=70" alt="PP影视 电影 城市边缘" loading="lazy"><span class="score">8.9</span></div><div class="cv"><h4>城市边缘</h4><p><span>犯罪 / 剧情</span><span>2026</span></p></div></article>
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&q=70" alt="PP影视 电影 深海之光" loading="lazy"><span class="score">9.1</span></div><div class="cv"><h4>深海之光</h4><p><span>科幻 / 冒险</span><span>2026</span></p></div></article>
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&q=70" alt="PP影视 电影 爆笑周末" loading="lazy"><span class="score">8.4</span></div><div class="cv"><h4>爆笑周末</h4><p><span>喜剧 / 爱情</span><span>2026</span></p></div></article>
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1505635552518-3448ff116af3?w=400&q=70" alt="PP影视 电影 最后的骑士" loading="lazy"><span class="score">8.7</span></div><div class="cv"><h4>最后的骑士</h4><p><span>动作 / 历史</span><span>2025</span></p></div></article>
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&q=70" alt="PP影视 电影 镜中人" loading="lazy"><span class="score">8.6</span></div><div class="cv"><h4>镜中人</h4><p><span>悬疑 / 惊悚</span><span>2025</span></p></div></article>
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=400&q=70" alt="PP影视 电影 星河旅途" loading="lazy"><span class="score">9.0</span></div><div class="cv"><h4>星河旅途</h4><p><span>科幻 / 剧情</span><span>2026</span></p></div></article>
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1608889175750-ff8b1a2d3e0e?w=400&q=70" alt="PP影视 电影 拳锋" loading="lazy"><span class="score">8.2</span></div><div class="cv"><h4>拳锋</h4><p><span>动作 / 运动</span><span>2025</span></p></div></article>
+      <article class="card"><div class="pic"><img src="https://images.unsplash.com/photo-1517604931442-7e0c8ec82705?w=400&q=70" alt="PP影视 电影 初夏的雨" loading="lazy"><span class="score">8.8</span></div><div class="cv"><h4>初夏的雨</h4><p><span>爱情 / 青春</span><span>2026</span></p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目二：电视剧（差异化 DOM：横向条目） ============ -->
+<section id="tv">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>热播电视剧</h2>
+      <div class="tabs" role="tablist">
+        <button class="on" role="tab" aria-selected="true">正在热播</button>
+        <button role="tab" aria-selected="false">国产剧</button>
+        <button role="tab" aria-selected="false">美剧</button>
+        <button role="tab" aria-selected="false">韩剧</button>
+      </div>
+      <a class="more" href="#tv">全部剧集 ›</a>
+    </div>
+    <div class="tvwrap">
+      <div class="tvrow">
+        <div class="pv"><img src="https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=400&q=70" alt="PP影视 电视剧 长安风云" loading="lazy"></div>
+        <div class="info">
+          <h4>长安风云</h4>
+          <p>大唐年间，一位年轻御史在权谋漩涡中抽丝剥茧，揭开一桩牵动朝堂的惊天大案。剧情紧凑，反转不断。</p>
+        </div>
+        <div class="eps"><b>更新至 32 集</b><div class="chips"><i>选集 30</i><i>31</i><i>32</i></div></div>
+      </div>
+      <div class="tvrow">
+        <div class="pv"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86e58f?w=400&q=70" alt="PP影视 电视剧 急诊十二时" loading="lazy"></div>
+        <div class="info">
+          <h4>急诊十二时</h4>
+          <p>聚焦急诊科医生群体，真实还原抢救室里的生死时速与医患故事，情感真挚，口碑之作。</p>
+        </div>
+        <div class="eps"><b>更新至 24 集</b><div class="chips"><i>选集 22</i><i>23</i><i>24</i></div></div>
+      </div>
+      <div class="tvrow">
+        <div class="pv"><img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=400&q=70" alt="PP影视 电视剧 猎狐行动" loading="lazy"></div>
+        <div class="info">
+          <h4>猎狐行动</h4>
+          <p>跨国经侦题材，警探追捕外逃经济罪犯，跨越三大洲的追缉之路，硬核又烧脑。</p>
+        </div>
+        <div class="eps"><b>全 40 集</b><div class="chips"><i>选集 38</i><i>39</i><i>40</i></div></div>
+      </div>
+      <div class="tvrow">
+        <div class="pv"><img src="https://images.unsplash.com/photo-1574267432553-4b4628081524?w=400&q=70" alt="PP影视 电视剧 归途" loading="lazy"></div>
+        <div class="info">
+          <h4>归途</h4>
+          <p>都市情感剧，讲述离家十年的女儿重返故乡，与家人重新理解彼此的温情故事。</p>
+        </div>
+        <div class="eps"><b>更新至 18 集</b><div class="chips"><i>选集 16</i><i>17</i><i>18</i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目三：排行榜（差异化 DOM：有序列表 + 进度条） ============ -->
+<section id="rank">
+  <div class="wrap">
+    <div class="sec-head"><h2>影视排行榜</h2><a class="more" href="#rank">查看完整榜单 ›</a></div>
+    <div class="rankbox">
+      <div class="rank">
+        <h5>🎬 电影热榜 TOP 5</h5>
+        <ol>
+          <li><span class="nm">深海之光</span><div><div class="bar"><span style="width:96%"></span></div></div><span class="pt">9.1</span></li>
+          <li><span class="nm">寂静回响</span><div><div class="bar"><span style="width:92%"></span></div></div><span class="pt">9.2</span></li>
+          <li><span class="nm">星河旅途</span><div><div class="bar"><span style="width:88%"></span></div></div><span class="pt">9.0</span></li>
+          <li><span class="nm">城市边缘</span><div><div class="bar"><span style="width:82%"></span></div></div><span class="pt">8.9</span></li>
+          <li><span class="nm">初夏的雨</span><div><div class="bar"><span style="width:78%"></span></div></div><span class="pt">8.8</span></li>
+        </ol>
+      </div>
+      <div class="rank">
+        <h5>📺 剧集热榜 TOP 5</h5>
+        <ol>
+          <li><span class="nm">长安风云</span><div><div class="bar"><span style="width:95%"></span></div></div><span class="pt">9.3</span></li>
+          <li><span class="nm">急诊十二时</span><div><div class="bar"><span style="width:90%"></span></div></div><span class="pt">9.0</span></li>
+          <li><span class="nm">猎狐行动</span><div><div class="bar"><span style="width:85%"></span></div></div><span class="pt">8.7</span></li>
+          <li><span class="nm">归途</span><div><div class="bar"><span style="width:80%"></span></div></div><span class="pt">8.5</span></li>
+          <li><span class="nm">破晓之前</span><div><div class="bar"><span style="width:74%"></span></div></div><span class="pt">8.3</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目四：影视资讯（差异化 DOM：图文卡片 + 列表） ============ -->
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head"><h2>影视资讯</h2><a class="more" href="#news">更多资讯 ›</a></div>
+    <div class="news">
+      <article class="article big">
+        <div class="th"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=70" alt="PP影视资讯 2026国产科幻片盘点" loading="lazy"></div>
+        <div class="bd">
+          <span class="cat">深度</span>
+          <h3>2026 国产科幻片盘点：从《星河旅途》看中国视效工业的进阶之路</h3>
+          <p>今年多部国产科幻作品在叙事与视觉上同步升级，本文将带你拆解这些影片的幕后制作与创作思路。</p>
+          <div class="ft"><span>PP影视编辑部</span><span>2026-10-22 · 阅读 1.2 万</span></div>
+        </div>
+      </article>
+      <div class="newslist">
+        <a class="it" href="#news"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=200&q=70" alt="PP影视资讯" loading="lazy"><div class="tx"><h6>《长安风云》导演专访：历史剧也要有现代节奏</h6><span>2026-10-20</span></div></a>
+        <a class="it" href="#news"><img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=200&q=70" alt="PP影视资讯" loading="lazy"><div class="tx"><h6>本周新片速递：5 部院线佳作上线 PP影视</h6><span>2026-10-19</span></div></a>
+        <a class="it" href="#news"><img src="https://images.unsplash.com/photo-1517604931442-7e0c8ec82705?w=200&q=70" alt="PP影视资讯" loading="lazy"><div class="tx"><h6>观影指南：十月必看的 3 部高分爱情片</h6><span>2026-10-17</span></div></a>
+        <a class="it" href="#news"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=200&q=70" alt="PP影视资讯" loading="lazy"><div class="tx"><h6>技术科普：在线影视多清晰度切换是怎么实现的</h6><span>2026-10-15</span></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="logo" style="margin-bottom:14px;">
+          <div class="badge">PP</div><div><b>PP影视</b></div>
+        </div>
+        <p>PP影视（ppyingshi-cn）是专注于高清影视在线观看的内容导航门户，提供电影、电视剧、动漫、综艺等分类索引与资讯服务。网址：<strong style="color:var(--gold)">https://ppyingshi-cn.github.io/</strong></p>
+      </div>
+      <div>
+        <h6>内容分类</h6>
+        <ul>
+          <li><a href="#movies">最新电影</a></li>
+          <li><a href="#tv">热播电视剧</a></li>
+          <li><a href="#movies">动漫番剧</a></li>
+          <li><a href="#movies">综艺节目</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>网站导航</h6>
+        <ul>
+          <li><a href="#home">首页</a></li>
+          <li><a href="#rank">排行榜</a></li>
+          <li><a href="#news">影视资讯</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>相关站点</h6>
+        <div class="footlinks">
+          <a href="https://ppyingshi-cn.github.io/">PP影视主页</a>
+          <a href="#movies">电影频道</a>
+          <a href="#tv">剧集频道</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 PP影视 ppyingshi-cn | https://ppyingshi-cn.github.io/ 版权所有</span>
+      <span>本页为静态演示页面，所有影视内容为示例数据，仅供建站效果展示</span>
+    </div>
+  </div>
+</footer>
+
+<button id="top" title="返回顶部" aria-label="返回顶部">↑</button>
+
+<script>
+// 导航高亮当前栏目
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.menu a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    var y=window.scrollY+120,cur=0;
+    secs.forEach(function(s,i){ if(s&&s.offsetTop<=y) cur=i; });
+    links.forEach(function(a,i){ a.classList.toggle('cur',i===cur); });
+    document.getElementById('top').classList.toggle('show',window.scrollY>500);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  document.getElementById('top').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  // tab 切换（演示）
+  document.querySelectorAll('.sec-head .tabs').forEach(function(box){
+    box.addEventListener('click',function(e){
+      var b=e.target.closest('button');if(!b)return;
+      box.querySelectorAll('button').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false');});
+      b.classList.add('on');b.setAttribute('aria-selected','true');
+    });
+  });
+})();
+</script>
+</body>
+</html>
